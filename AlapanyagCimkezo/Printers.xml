@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<printers>
+  <printer name="Szerszám TLP 2824 (ZPL)">
+    <winname>ZDesigner TLP 2824 Plus (ZPL)</winname>
+  </printer>  
+</printers> 
