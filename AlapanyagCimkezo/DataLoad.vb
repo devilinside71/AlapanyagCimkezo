@@ -9,8 +9,8 @@ Module DataLoad
     Public labelcodes As List(Of String) = New List(Of String)
     Public printernames As List(Of String) = New List(Of String)
     Public printerwinnames As List(Of String) = New List(Of String)
-    Public szerszamcodes As List(Of String) = New List(Of String)
-    Public szerszamdescs As List(Of String) = New List(Of String)
+    Public alapanyagcodes As List(Of String) = New List(Of String)
+    Public alapanyagdescs As List(Of String) = New List(Of String)
     Public Sub LoadZPLSamples()
         Dim m_xmlr As XmlTextReader
         'Create the XML Reader
@@ -69,7 +69,7 @@ Module DataLoad
         m_xmlr.Close()
 
     End Sub
-    Public Sub LoadTools()
+    Public Sub LoadMaterials()
         Dim m_xmlr As XmlTextReader
         'Create the XML Reader
         m_xmlr = New XmlTextReader("Alapanyagok.xml")
@@ -88,11 +88,11 @@ Module DataLoad
                 Exit While
             End If
             'Get the Gender Attribute Value
-            szerszamcodes.Add(m_xmlr.GetAttribute("name"))
+            alapanyagcodes.Add(m_xmlr.GetAttribute("name"))
             'Read elements firstname and lastname
             m_xmlr.Read()
             'Get the firstName Element Value
-            szerszamdescs.Add(m_xmlr.ReadElementString("megnev"))
+            alapanyagdescs.Add(m_xmlr.ReadElementString("megnev"))
         End While
         'close the reader
         m_xmlr.Close()
